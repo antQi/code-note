@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浏览器调试用</title>
+</head>
+
+<body>
+    <div id="div" onclick="alert('html')">
+        click me
+    </div>
+    <script>
+        var divEl = document.getElementById('div')
+
+
+
+        divEl.addEventListener('click', function() {
+                alert('addEventListener-1')
+            })
+            // divEl.onclick = function() {
+            //     alert('onclick-1')
+            // }
+        divEl.addEventListener('click', function() {
+            alert('addEventListener-2')
+        })
+    </script>
+</body>
+
+</html>
