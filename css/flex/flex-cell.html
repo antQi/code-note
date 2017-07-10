@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex-cell</title>
+    <style>
+        .row {
+            display: flex;
+        }
+        
+        .col {
+            flex: 1;
+            background: #eee;
+            border: 1px solid #cecece;
+            margin: 5px;
+            padding: 10px;
+            color: #ff6600;
+            text-align: center;
+            border-radius: 2%;
+        }
+        
+        .row1 {
+            display: flex;
+            width: 100%
+        }
+        
+        .col-3 {
+            flex: 0 0 3;
+        }
+        
+        .col-4 {
+            flex-grow: 4
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">one</div>
+        <div class="col">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ipsum modi maiores vero culpa excepturi harum veritatis accusantium exercitationem, ut magnam laudantium beatae facere provident nobis assumenda ratione ducimus odio. </div>
+        <div class="col">three</div>
+    </div>
+
+    <div class="row1">
+        <div class="col col-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ducimus similique nostrum in, animi minima molestias, doloribus perspiciatis, exercitationem iure cum esse sit sequi. Voluptas odio deserunt iste nemo error.</div>
+        <div class="col col-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero deserunt nemo adipisci cum facere magni temporibus mollitia quod illo perspiciatis voluptas laboriosam doloribus aliquid tenetur quam vel, a quis voluptatum.</div>
+        <div class="col col-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet voluptatibus omnis tempore consectetur aliquid doloremque, eaque adipisci aliquam atque fuga. Animi expedita unde dolorem quidem mollitia laborum quas eos rerum.</div>
+    </div>
+</body>
+
+</html>

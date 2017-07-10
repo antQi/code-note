@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FlexBox</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            background-color: black
+        }
+        
+        .box {
+            margin: 20px;
+            padding: 5px;
+            width: 100px;
+            height: 100px;
+            border-radius: 8%;
+            background-color: #f1f1f1;
+            box-shadow: inset 0 5px white, inset 0 -5px #bbb, inset 5px 0 #d7d7d7, inset -5px 0 #d7d7d7;
+        }
+        
+        .done {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            margin: 5px;
+            border-radius: 50%;
+            background-color: #000;
+        }
+        
+        .one {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .two {
+            display: flex;
+            justify-content: space-between
+        }
+        
+        .two>.done:nth-child(2) {
+            align-self: flex-end
+        }
+        
+        .three {
+            display: flex
+        }
+        
+        .three>.done:nth-child(2) {
+            align-self: center
+        }
+        
+        .three>.done:nth-child(3) {
+            align-self: flex-end
+        }
+        
+        .four {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between
+        }
+        
+        .four>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .five {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between
+        }
+        
+        .five {
+            display: flex;
+            justify-content: space-between
+        }
+        
+        .five>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .five>div:nth-child(2) {
+            justify-content: center
+        }
+        
+        .six {
+            display: flex;
+            justify-content: space-between
+        }
+        
+        .six>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box one">
+        <span class="done"></span>
+    </div>
+    <div class="box two">
+        <span class="done"></span>
+        <span class="done"></span>
+    </div>
+    <div class="box three">
+        <span class="done"></span>
+        <span class="done"></span>
+        <span class="done"></span>
+    </div>
+    <div class="box four">
+        <div>
+            <span class="done"></span>
+            <span class="done"></span>
+        </div>
+        <div>
+            <span class="done"></span>
+            <span class="done"></span>
+        </div>
+    </div>
+    <div class="box five">
+        <div>
+            <span class="done"></span>
+            <span class="done"></span>
+        </div>
+        <div>
+            <span class="done"></span>
+        </div>
+        <div>
+            <span class="done"></span>
+            <span class="done"></span>
+        </div>
+    </div>
+    <div class="box six">
+        <div>
+            <span class="done"></span>
+            <span class="done"></span>
+            <span class="done"></span>
+        </div>
+        <div>
+            <span class="done"></span>
+            <span class="done"></span>
+            <span class="done"></span>
+        </div>
+    </div>
+</body>
+
+</html>

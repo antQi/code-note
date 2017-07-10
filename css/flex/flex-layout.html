@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>layout</title>
+    <style>
+        * {
+            margin: 2px;
+            color: #fff;
+            text-align: center
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header,
+        footer {
+            flex: 1
+        }
+        
+        header {
+            background-color: #ff5500;
+        }
+        
+        footer {
+            background-color: #fe3;
+        }
+        
+        .main {
+            flex: 1;
+            display: flex;
+            background-color: #ee9;
+        }
+        
+        .main .left {
+            flex: 0 0 20%;
+            background-color: #6dd2f9
+        }
+        
+        .main .content {
+            flex: 1;
+            background-color: #d06cf1
+        }
+        
+        .main .right {
+            flex: 0 0 15%;
+            background-color: #9bda37
+        }
+        
+        @media (max-width:768px) {
+            .main {
+                flex-direction: column
+            }
+            .left,
+            .right {
+                flex: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        header
+    </header>
+    <div class="main">
+        <div class="left">
+            <h1>left</h1>
+        </div>
+        <div class="content">
+            <h1>content</h1>
+        </div>
+        <div class="right">
+            <h1>right</h1>
+        </div>
+    </div>
+    <footer>
+        footer
+    </footer>
+</body>
+
+</html>

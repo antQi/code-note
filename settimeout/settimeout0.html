@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>settimeout({},0)</title>
+    <!--http://www.cnblogs.com/silin6/p/4333999.html-->
+</head>
+
+<body>
+    <input type="text" placeholder="输入值">
+    <span class="preview"></span>
+
+    <hr>
+    <div class="inpwrapper">
+        <input id="makeinput" type="button" placeholder="makeinput" value="点我" />
+    </div>
+    <script>
+        function get(selector) {
+            return document.querySelector(selector)
+        }
+        window.onload = function() {
+            var domInput = get('input'),
+                view = get('.preview');
+            //onkeypress兼容性和说明：http://www.w3school.com.cn/jsref/jsref_events.asp
+            domInput.onkeypress = function() {
+                console.log('press', this.value)
+
+                setTimeout(function() {
+                    //这个函数在keypress之后，keyup之前执行
+                    console.log('settimeout', this.value);
+                }.bind(this), 0);
+            };
+            domInput.onkeyup = function() {
+                console.log('up');
+            };
+
+
+            //---------------
+
+            var makeBtn = get('#makeinput');
+            //观察onmouseXXX系完成整个单击的顺序
+            makeBtn.onmousedown = function(e) {
+                console.log(e.type);
+                var input = document.createElement('input');
+                input.setAttribute('type', 'text');
+                input.setAttribute('value', 'test1');
+                get('.inpwrapper').appendChild(input);
+                input.onfocus = function() { //观察我们新生成的input什么时候获取焦点的，或者它有没有像原文作者说的那样被丢弃了
+                    console.info('input focus');
+                };
+                // input.focus();
+                // input.select();  其实有获得焦点 被btn focus覆盖了
+
+                setTimeout(function() {
+                    input.focus();
+                    input.select();
+                }, 0)
+            }
+            makeBtn.onclick = function(e) {
+                console.log(e.type);
+            };
+            makeBtn.onmouseup = function(e) {
+                console.log(e.type);
+            };
+            makeBtn.onfocus = function() { //观察我们生成按钮什么时候获取焦点的
+                console.log('makeBtn focus');
+            }
+        };
+    </script>
+</body>
+
+</html>
