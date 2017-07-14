@@ -10,7 +10,6 @@ function touchStart(event) {
 }
 
 function touchMove(event) {
-
     if (dragStart === null) return;
 
     if (event.touches) {
@@ -18,7 +17,6 @@ function touchMove(event) {
     }
     //得到抓取开始时于进行中的差值的百分比
     percentage = (dragStart - event.clientY) / window.screen.height; //和屏幕高度做比较
-
     if (percentage > 0) {
         // //向上拖动
         var translateY = 1 - 0.4 * percentage; //位置系数，可以微调
